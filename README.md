@@ -7,6 +7,7 @@
 
 ```go
 palindrome.Check("nishioishin") // true
+palindrome.Check("みぎてばてぎみ") // true
 palindrome.Check("Was it a cat I saw?") // false
 palindrome.Check(500050005) // true
 palindrome.Check(1) // true

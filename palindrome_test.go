@@ -14,6 +14,7 @@ func TestCheck(t *testing.T) {
 	}{
 		{"str_yes", "wow", true},
 		{"str_no", "abc", false},
+		{"cjk_yes", "みぎてばてぎみ", true},
 		{"int_yes", 1234543210123454321, true},
 		{"int_no", 1234555550123454321, false},
 		{"i64_yes", int64(1234543210123454321), true},
@@ -41,6 +42,7 @@ func TestCheckString(t *testing.T) {
 	}{
 		{"yes", "wow", true},
 		{"no", "abc", false},
+		{"cjk", "みぎてばてぎみ", true},
 	}
 	for _, c := range cases {
 		c := c
