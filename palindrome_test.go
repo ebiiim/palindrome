@@ -79,7 +79,7 @@ func TestCheckInt(t *testing.T) {
 	}
 }
 
-func BenchmarkCheckInt1_long(b *testing.B) {
+func BenchmarkCheckInt1_19Digits(b *testing.B) {
 	x := 1234543210123454321
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
@@ -87,7 +87,7 @@ func BenchmarkCheckInt1_long(b *testing.B) {
 	}
 }
 
-func BenchmarkCheckInt2_long(b *testing.B) {
+func BenchmarkCheckInt2_19Digits(b *testing.B) {
 	x := 1234543210123454321
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
@@ -95,7 +95,23 @@ func BenchmarkCheckInt2_long(b *testing.B) {
 	}
 }
 
-func BenchmarkCheckInt1_short(b *testing.B) {
+func BenchmarkCheckInt1_4Digits(b *testing.B) {
+	x := 5005
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		palindrome.CheckInt1(x)
+	}
+}
+
+func BenchmarkCheckInt2_4Digits(b *testing.B) {
+	x := 5005
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		palindrome.CheckInt2(x)
+	}
+}
+
+func BenchmarkCheckInt1_3Digits(b *testing.B) {
 	x := 505
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
@@ -103,7 +119,7 @@ func BenchmarkCheckInt1_short(b *testing.B) {
 	}
 }
 
-func BenchmarkCheckInt2_short(b *testing.B) {
+func BenchmarkCheckInt2_3Digits(b *testing.B) {
 	x := 505
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {

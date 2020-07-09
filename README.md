@@ -33,11 +33,13 @@ s := strconv.Itoa(n)
 reverseStr(s) == s
 ```
 
-After trying both, we found that Method 2 was faster.
+After trying both, we found that Method 2 is faster when the integer has more than 3 digits.
 
 ```text
-BenchmarkCheckInt1_long-12       2025841               592 ns/op               0 B/op          0 allocs/op
-BenchmarkCheckInt2_long-12       5093236               228 ns/op              64 B/op          2 allocs/op
-BenchmarkCheckInt1_short-12     15779865                82.3 ns/op             0 B/op          0 allocs/op
-BenchmarkCheckInt2_short-12     14655747                83.8 ns/op            10 B/op          2 allocs/op
+BenchmarkCheckInt1_19Digits-12           2048470               586 ns/op               0 B/op          0 allocs/op
+BenchmarkCheckInt2_19Digits-12           5389108               222 ns/op              64 B/op          2 allocs/op
+BenchmarkCheckInt1_4Digits-12           11996910                99.1 ns/op             0 B/op          0 allocs/op
+BenchmarkCheckInt2_4Digits-12           14353436                82.0 ns/op            16 B/op          2 allocs/op
+BenchmarkCheckInt1_3Digits-12           16190020                75.3 ns/op             0 B/op          0 allocs/op
+BenchmarkCheckInt2_3Digits-12           15200853                79.5 ns/op            10 B/op          2 allocs/op
 ```
